@@ -1,0 +1,8 @@
+Usage: hkkeygen_cli [options] [number] [size] ...
+
+Options:
+-a			Alphanumeric characters
+-n			Numeric characters
+-s			Special characters 
+
+report bugs to bug@harloks.com

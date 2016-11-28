@@ -1,0 +1,4 @@
+default_size = 10
+default_number = 1
+size_limit = 100
+number_limit = 1000000
