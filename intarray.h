@@ -88,7 +88,11 @@ extern int premier_2(int m);
 extern int premier_3(int m);
 
 extern intarray args_to_intarray(int nb , char **args);
+<<<<<<< HEAD
 extern intarray args_to_intarray_2(int from, int to , char **args);
+=======
+extern intarray args_to_intarray(int from, int to , char **args);
+>>>>>>> 5af5ab35982d4e3410566c11eb7def38f07728cc
 extern intarray random_intarray(int len);
 extern intarray intarray_clone_heap_sort_by_min(intarray I);
 extern void intarray_D_heap_sort_by_min(intarray I);

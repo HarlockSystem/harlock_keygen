@@ -517,6 +517,7 @@ intarray random_intarray(int len)
   return I;
 }
 
+<<<<<<< HEAD
 intarray args_to_intarray_2(int from,int to , char **args)
 {
   intarray I = empty_intarray_create(to -1);
@@ -528,6 +529,8 @@ intarray args_to_intarray_2(int from,int to , char **args)
   return I;
 }
 
+=======
+>>>>>>> 5af5ab35982d4e3410566c11eb7def38f07728cc
 intarray args_to_intarray(int nb , char **args)
 {
   intarray I = empty_intarray_create(nb -1);

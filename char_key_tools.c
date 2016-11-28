@@ -119,7 +119,6 @@ char_table ASCII_key_set(char_table_2D ASCII) //non cli version return NULL if e
   return ASCII->data[ASCII_set];
 }
 
-
 /* a -> alphabet
    n -> numeric
    s -> special
@@ -377,7 +376,6 @@ char_table ASCII_key_set_cli(char_table opt, char_table_2D ASCII)//cli version
   return ASCII->data[ASCII_set];
 }
 
-
 int random_value (int to)
 {
   long unsigned int randomA = random() % (to);
@@ -402,7 +400,6 @@ void print_list_debug(key_list L, int size ,int num)
     }
 }
 
-
 void key_gen(char_table key,char_table keymap, int size, int random_to )
 {
   int i;
@@ -411,7 +408,6 @@ void key_gen(char_table key,char_table keymap, int size, int random_to )
       key->data[i] = keymap->data[random_value(random_to)];
     }
 }
-
 
 void list_destroy ( key_list data)
 {
@@ -436,7 +432,6 @@ void table_destroy (char_table key)
   free (key->data);
   free (key);
 }
-
    
 void str_copy_to_char_table(char * str,char_table table)
   
@@ -492,7 +487,6 @@ int char_table_to_int (char_table j) /* assume j is an int */
   return r;
 }
 
-
 char_table char_table_input(void)
 {
   char_table j = standard_empty_char_table_create ();
@@ -505,7 +499,6 @@ char_table char_table_input(void)
   return j;
 }
 
-
 void char_table_add (char_table A, char n) 
 {
   ext_char_table_set (A, A->len, n);
@@ -515,7 +508,6 @@ char_table empty_char_table_create (int alloc)
 {
   return ext_char_table_create (0, alloc);
 }
-
 
 char_table standard_empty_char_table_create (void)
 {
@@ -530,8 +522,6 @@ char_table ext_char_table_create (int len, int alloc)
   A->data = malloc ((sizeof(char)) * alloc );
   return A;
 }
-
-
 
 void char_table_set (char_table C, int i, char n)
 {
@@ -568,7 +558,6 @@ void char_table_print (char_table C)
       printf("%c",C->data[n]);
     }
 }
-
 
 char_table get_secure_input()
 {
@@ -620,10 +609,6 @@ void intarray_cli_args_check(intarray I)
     intarray_add(I,size_def);
 }
 
-
-
-
-
 void display_help (void)
 {
   fprintf(stdout,"Usage: hkkeygen_cli [options] [number] [size] ...\nOptions:\n-a			Alphanumeric characters\n-n			Numeric characters\n-s			Special characters\n\nreport bugs to bug@harloks.com"); 
@@ -655,7 +640,6 @@ char char_table_get (char_table T , int i)
 }
 
 //////////////// char_table_2D f() ////////////////
-
 
 char_table_2D char_table_2D_create(int len)
 {
@@ -703,7 +687,6 @@ void char_table_2D_and_char_table_destroy (char_table_2D T)
   free (T);
 }
 
-
 char_table char_table_2D_get (char_table_2D T , int i)
 {
   if (( i < 0 ) || (i >= T->len))
@@ -740,8 +723,6 @@ void ext_char_table_2D_set ( char_table_2D T, int i, char_table n)
   char_table_2D_set(T, i, n);
 }
 
-
-
 int char_table_2D_length (char_table_2D T)
 {
   return T->len;
@@ -768,7 +749,6 @@ void char_table_2D_delete(char_table_2D T, int loc)/*modifie l'ordre du tableau*
   T->len--;
 } 
 
- 
 void char_table_2D_alloc_more(char_table_2D T , int new_alloc)
 {
   char_table * tmp = malloc (sizeof (char_table) * new_alloc);
