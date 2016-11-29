@@ -523,12 +523,8 @@ intarray args_to_intarray_2(int from,int to , char **args)
   int i;
   for (i = from; i < to ; i++)
     {
-<<<<<<< HEAD
        if (args[i] != NULL)
 	 intarray_add(I, atoi(args[i]));
-=======
-      intarray_add(I, atoi(args[i]));
->>>>>>> 5af5ab35982d4e3410566c11eb7def38f07728cc
     }
   return I;
 }
@@ -539,12 +535,8 @@ intarray args_to_intarray(int nb , char **args)
   int i;
   for (i = 1; i < nb ; i++)
     {
-<<<<<<< HEAD
       if (args[i] != NULL)
 	intarray_add(I, atoi(args[i]));
-=======
-      intarray_add(I, atoi(args[i]));
->>>>>>> 5af5ab35982d4e3410566c11eb7def38f07728cc
     }
   return I;
 }

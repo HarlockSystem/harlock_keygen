@@ -189,7 +189,7 @@ char_table_2D TYPABLE_ASCII_table()
       Numeric : 48-57
       other : 32-47 58-64 91-96 123-126 */  
   int i = 0;
-  char* help = "Usage: hkkeygen_cli [options] [number] [size] ...\nOptions:\n-a			Alphanumeric characters\n-n			Numeric characters\n-s			Special characters\n\nreport bugs to bug@harloks.com";
+  char* help = "Usage: hkkeygen_cli [options] [number] [size] ...\nOptions:\n-a			Alphanumeric characters\n-n			Numeric characters\n-s			Special characters\n\nreport bugs to bug@harloks.com"\n;
 
   int al1 = 65; int al2 = 90; int al3 = 97; int al4 = 122; int nu1 = 48; int nu2 = 57; int ot1 = 32; int ot2 = 47;int ot3 = 58; int ot4 = 64;int ot5 =91;int ot6 = 96; int ot7 = 123;int ot8 = 126;
   
@@ -218,8 +218,8 @@ char_table_2D TYPABLE_ASCII_table()
 	}
       i ++;
     }
-  fprintf(stderr,"%s", help);
-  char_table_print(H);
+  
+ 
   char_table_2D_add(C, H);//0
   char_table_2D_add(C, A);//1
   char_table_2D_add(C, N);//2
@@ -416,8 +416,7 @@ void list_destroy ( key_list data)
     
 void key_gen_store (key_list C ,char_table key, int size, int l)
 {
-  int n;
-  int a; 
+  int n, a; 
   for( n = 0 ; n < size ; n++)
     {
       a = n +(size * l);
@@ -433,12 +432,14 @@ void table_destroy (char_table key)
   free (key);
 }
    
-void str_copy_to_char_table(char * str,char_table table)
-  
+void str_copy_to_char_table(char *str, char_table table)
 {
   int i;
-  for (i = 0;  i < ((int)strlen(str)); i++)
-    table->data[i] = str[i];
+  for (i = 0; i < (int)strlen(str); i++)
+    {
+      table->data[i] = str[i];
+      table->len++;
+    }
 }
 
 char_table int_to_char_table (int n)
@@ -638,6 +639,8 @@ char char_table_get (char_table T , int i)
   assert (i < T->len);
   return T->data[i];
 }
+
+//void char_table_randomize (char_table C)
 
 //////////////// char_table_2D f() ////////////////
 
